@@ -17,13 +17,13 @@ public class Mail {
 	// Replace sender@example.com with your "From" address.
     // This address must be verified.
     static final String FROM = "jet981217@naver.com";
-    static final String FROMNAME = "±¹¼ö»ç Å©·Ñ·¯º¿";
+    static final String FROMNAME = "êµ­ìˆ˜ì‚¬ í¬ë¡¤ëŸ¬ë´‡";
 	
     // Replace recipient@example.com with a "To" address. If your account 
     // is still in the sandbox, this address must be verified.
-    final static String []TO_1 = new String[] { "namhoyog@naver.com",//*/ 
+    final static String []TO_1 = new String[] {"ljoljo3980@naver.com", "namhoyog@naver.com",//*/ 
     		"jet981217@naver.com"};
-    final static String []TO_2 = new String[] { "namhoyog@naver.com", //*/
+    final static String []TO_2 = new String[] {"kaay51022@naver.com", "namhoyog@naver.com", //*/
     		"jet981217@naver.com"};
     final static String []TO_3 = new String[] {"tkth2575@naver.com", "jsj4213@naver.com", "yjr0299@naver.com", "windkwon@naver.com",
 
@@ -45,15 +45,15 @@ public class Mail {
     		"jet981217@naver.com"};
     
     final static String []TO_HO = new String[] {"namhoyog@naver.com",//*/ 
-"jet981217@naver.com"};//È£¼Û
+"jet981217@naver.com"};//í˜¸ì†¡
 
     final static String []TO_HA = new String[] {"namhoyog@naver.com",//*/ 
-    "jet981217@naver.com"};//Ç×¸¸
+    "jet981217@naver.com"};//í•­ë§Œ
     
-    //º¸³»´Â ¸ŞÀÏ ID
+    //ë³´ë‚´ëŠ” ë©”ì¼ ID
     static final String SMTP_USERNAME = "jet981217@naver.com";
     
-    //º¸³»´Â ¸ŞÀÏ ºñ¹ø
+    //ë³´ë‚´ëŠ” ë©”ì¼ ë¹„ë²ˆ
     static final String SMTP_PASSWORD = "dlftmdck@98";
     
     // The name of the Configuration Set to use for this message.
@@ -61,35 +61,35 @@ public class Mail {
     // comment out or remove the header below.
     static final String CONFIGSET = "ConfigSet";
     
-    // Amazon SES SMTP host name. This example uses the ¹Ì±¹ ¼­ºÎ(¿À·¹°ï) region.
+    // Amazon SES SMTP host name. This example uses the ë¯¸êµ­ ì„œë¶€(ì˜¤ë ˆê³¤) region.
     // See https://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html#region-endpoints
     // for more information.
     static final String HOST = "smtp.naver.com";
     
     // The port you will connect to on the Amazon SES SMTP endpoint. 
     static final int PORT = 587;
-    static String SUBJECT = "Ã¶µµ´ë ÄÚ·Î³ª Á¤º¸";
+    static String SUBJECT = "ì² ë„ëŒ€ ì½”ë¡œë‚˜ ì •ë³´";
     
     
  
     public final static String Mail_body(String Which_Fe,String TMO_index[], int How_Many_TMO, int TMO_data[][], String color[]) {
     	String start = null;
     	if (Which_Fe == "HO") {
-    		start = "<h1>È£¼Û´ë ÄÚ·Î³ª 19 Á¤º¸</h1>";
+    		start = "<h1>í˜¸ì†¡ëŒ€ ì½”ë¡œë‚˜ 19 ì •ë³´</h1>";
     	}
     	else if (Which_Fe == "HA") {
-    		start = "<h1>Ç×¸¸´Ü ÄÚ·Î³ª 19 Á¤º¸</h1>";
+    		start = "<h1>í•­ë§Œë‹¨ ì½”ë¡œë‚˜ 19 ì •ë³´</h1>";
     	}
     	else 
-    		start = "<h1>" + Which_Fe + "Ã¶µµ´ë ÄÚ·Î³ª 19 Á¤º¸</h1>";
+    		start = "<h1>" + Which_Fe + "ì² ë„ëŒ€ ì½”ë¡œë‚˜ 19 ì •ë³´</h1>";
     	String body =
         	    start+
         	    "<table border=\"1\" border=\"1\" width =\"700\" height=\"300\" align = \"center\">"+
-        		"<th>Áö¿ª</th>"+
-        		"<th>¿À´Ã È®ÁøÀÚ ¼ö</th>"+
-        		"<th>¿À´Ã ´©Àû È®ÁøÀÚ ¼ö</th>"+
-        		"<th>¾îÁ¦ ´©Àû È®ÁøÀÚ ¼ö</th>"+
-        		"<th>ÄÚ·Î³ª ¹Ì¹ß»ı ÀÏ¼ö</th>" ;
+        		"<th>ì§€ì—­</th>"+
+        		"<th>ì˜¤ëŠ˜ í™•ì§„ì ìˆ˜</th>"+
+        		"<th>ì˜¤ëŠ˜ ëˆ„ì  í™•ì§„ì ìˆ˜</th>"+
+        		"<th>ì–´ì œ ëˆ„ì  í™•ì§„ì ìˆ˜</th>"+
+        		"<th>ì½”ë¡œë‚˜ ë¯¸ë°œìƒ ì¼ìˆ˜</th>" ;
         
         for(int i = 0; i<How_Many_TMO; i++) {
         	if(i == How_Many_TMO-1) {
@@ -102,16 +102,16 @@ public class Mail {
                 		    "<td>"+Integer.toString(TMO_data[i][2]) + "</td>"+
                 		"</tr>"+
                 	    "</table>"+
-                	    "<span style=color:#54be07> ÃÊ·Ï»ö"+
-                	    "<span>Àº ÄÚ·Î³ª ¹Ì¹ß»ı 7ÀÏ ÀÌ»ó<br>"+
-                	    "<span style=color:#ff7f00> ÁÖÈ²»ö"+
-                	    "<span>Àº ÄÚ·Î³ª ¹Ì¹ß»ı 4~6ÀÏ<br>"+ 
-                	    "<span style=color:#FF0000> »¡°£»ö"+
-                	    "<span>Àº ÄÚ·Î³ª ¹Ì¹ß»ı 1~3ÀÏ ÀÔ´Ï´Ù.<br>"+
-                		"<span style=font-size: 12pt; color: rgb(51,51,51);>¿À·ù ¹ß°ß½Ã jet981217@naver.comÀ¸·Î Á¦º¸ ºÎÅ¹µå¸³´Ï´Ù.</span>"
+                	    "<span style=color:#54be07> ì´ˆë¡ìƒ‰"+
+                	    "<span>ì€ ì½”ë¡œë‚˜ ë¯¸ë°œìƒ 7ì¼ ì´ìƒ<br>"+
+                	    "<span style=color:#ff7f00> ì£¼í™©ìƒ‰"+
+                	    "<span>ì€ ì½”ë¡œë‚˜ ë¯¸ë°œìƒ 4~6ì¼<br>"+ 
+                	    "<span style=color:#FF0000> ë¹¨ê°„ìƒ‰"+
+                	    "<span>ì€ ì½”ë¡œë‚˜ ë¯¸ë°œìƒ 1~3ì¼ ì…ë‹ˆë‹¤.<br>"+
+                		"<span style=font-size: 12pt; color: rgb(51,51,51);>ì˜¤ë¥˜ ë°œê²¬ì‹œ jet981217@naver.comìœ¼ë¡œ ì œë³´ ë¶€íƒë“œë¦½ë‹ˆë‹¤.</span>"
                 	    		
         				;
-        		//¸¶Áö¸·ºÎºĞ
+        		//ë§ˆì§€ë§‰ë¶€ë¶„
         		
         	}
         	else {
@@ -144,7 +144,7 @@ public class Mail {
 				color[i] = "#FF0000";
 			}
         }
-		SimpleDateFormat format2 = new SimpleDateFormat ( "yyyy³â MM¿ùddÀÏ HH½ÃmmºĞ");
+		SimpleDateFormat format2 = new SimpleDateFormat ( "yyyyë…„ MMì›”ddì¼ HHì‹œmmë¶„");
         Date time1 = new Date();
         
         String time2 = format2.format(time1);
@@ -203,9 +203,9 @@ public class Mail {
    	        	if(Which_Fe == "1" || Which_Fe == "2" || Which_Fe == "3")
    	        		msg.setSubject(time2+ " "+Which_Fe+ SUBJECT);
    	        	else if (Which_Fe == "HO")
-   	        		msg.setSubject(time2+ " È£¼Û´ë ÄÚ·Î³ª Á¤º¸");
+   	        		msg.setSubject(time2+ " í˜¸ì†¡ëŒ€ ì½”ë¡œë‚˜ ì •ë³´");
    	        	else
-   	        		msg.setSubject(time2+ " Ç×¸¸´Ü ÄÚ·Î³ª Á¤º¸");
+   	        		msg.setSubject(time2+ " í•­ë§Œë‹¨ ì½”ë¡œë‚˜ ì •ë³´");
    			} catch (MessagingException e) {
    				// TODO Auto-generated catch block
    				e.printStackTrace();
