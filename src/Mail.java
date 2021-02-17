@@ -23,7 +23,7 @@ public class Mail {
     // is still in the sandbox, this address must be verified.
     final static String []TO_1 = new String[] {"ljoljo3980@naver.com", "namhoyog@naver.com",//*/ 
     		"jet981217@naver.com"};
-    final static String []TO_2 = new String[] {"kaay51022@naver.com", "namhoyog@naver.com", //*/
+    final static String []TO_2 = new String[] { "kaay51022@naver.com","namhoyog@naver.com", //*/
     		"jet981217@naver.com"};
     final static String []TO_3 = new String[] {"tkth2575@naver.com", "jsj4213@naver.com", "yjr0299@naver.com", "windkwon@naver.com",
 
