@@ -7,7 +7,7 @@ import org.jsoup.select.Elements;
 public class Crwal_2 {
 	
 	 
-    //2Ã¶µµ´ë Áö¿ªº° URL
+    //2ì² ë„ëŒ€ ì§€ì—­ë³„ URL
     static String URL_DongDaegu = "https://www.dong.daegu.kr/corona19/index.php";
     static String URL_Busan ="https://www.busan.go.kr/covid19/Corona19.do";
     static String URL_Changwon="http://xn--19-q81ii1knc140d892b.kr/main/main.do";
@@ -15,12 +15,13 @@ public class Crwal_2 {
     static String URL_Gyeongju="https://gb.go.kr/Main/open_contents/section/wel/page.do?mnu_uid=5856&LARGE_CODE=360&MEDIUM_CODE=90";
     static String URL_Gimcheon="https://gb.go.kr/Main/open_contents/section/wel/page.do?mnu_uid=5856&LARGE_CODE=360&MEDIUM_CODE=90";
     static String URL_Gyeongsan="https://gb.go.kr/Main/open_contents/section/wel/page.do?mnu_uid=5856&LARGE_CODE=360&MEDIUM_CODE=90";
-    static String URL_Ulsan="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun=";
+    //static String URL_Ulsan="http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="; ìš¸ì‚°ì „ì²´
+    static String URL_Ulsan ="https://www.ulsan.go.kr/u/health/contents.ulsan?mId=001002003000000000";//ìš¸ì‚° ìš¸ì§„êµ°
     static String URL_Jinju="http://xn--19-q81ii1knc140d892b.kr/main/main.do";
     static String URL_Yeongcheon="https://gb.go.kr/Main/open_contents/section/wel/page.do?mnu_uid=5856&LARGE_CODE=360&MEDIUM_CODE=90";
     static String URL_Gupo = "https://www.busan.go.kr/covid19/Corona19.do";
    
-    //2Ã¶µµ´ë Áö¿ªº° 
+    //2ì² ë„ëŒ€ ì§€ì—­ë³„ 
     static String contents_DongDaegu="p.txt02";
     static String contents_Busan ="td";
     static String contents_Changwon="td.point";
@@ -28,14 +29,15 @@ public class Crwal_2 {
     static String contents_Gyeongju="dl";
     static String contents_Gimcheon="dl";
     static String contents_Gyeongsan="dl";
-    static String contents_Ulsan="#map_city7 .mapview .cityinfo li div";
+    //static String contents_Ulsan="#map_city7 .mapview .cityinfo li div"; ìš¸ì‚° ì „ì²´
+    static String contents_Ulsan  = "tr.patient#patient4 td.name";//ìš¸ì‚° ìš¸ì§„êµ°
     static String contents_Jinju="td.point";
     static String contents_Yeongcheon="dl";
     static String contents_Gupo = "td";
     
-    //Type1: µ¿´ë±¸,ºÎ»ê,¿ï»ê
-    //Type2: Ã¢¿ø,ÁøÁÖ
-    //Type3: Æ÷Ç×,°æÁÖ,±èÃµ,°æ»ê,¿µÃµ
+    //Type1: ë™ëŒ€êµ¬,ë¶€ì‚°,ìš¸ì‚°
+    //Type2: ì°½ì›,ì§„ì£¼
+    //Type3: í¬í•­,ê²½ì£¼,ê¹€ì²œ,ê²½ì‚°,ì˜ì²œ
     
     public static int crawling(String URL,String contents_route,int cheaking) {
     	Document doc = null;
@@ -45,27 +47,30 @@ public class Crwal_2 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//.Àº class ½ºÆäÀÌ½º¹Ù´Â ÅÂ±× #´Â id
+		//.ì€ class ìŠ¤í˜ì´ìŠ¤ë°”ëŠ” íƒœê·¸ #ëŠ” id
 		Elements contents = doc.select(contents_route);
 		String to_string = contents.toString();
 		String to_string_temp=null;
 		
-		//Typeº°·Î tagÃ£±â
-		if(cheaking==7) {                  //Type1
+		//Typeë³„ë¡œ tagì°¾ê¸°
+		/*if(cheaking==7) {                  //Type1
 			to_string_temp = SearchTag_Type_Ulsan(to_string,cheaking);
-		}//¿ï»ê
+		}//ìš¸ì‚°ì „ì²´*/
+		if(cheaking == 7) {
+			return SearchTag_Type_Ulsan(to_string, cheaking);
+		}
 		else if(cheaking == 0) {
 			to_string_temp = SearchTag_Type_Dongdaegu(to_string,cheaking);
-		}//µ¿´ë±¸
+		}//ë™ëŒ€êµ¬
 		else if(cheaking == 1 || cheaking == 10 ||cheaking == -1) {
 			to_string_temp = SearchTag_Type_BusanGupo(to_string,cheaking);
-		}//ºÎ»ê±¸Æ÷ //Ç×¸¸´Üµµ Æ÷ÇÔ(-1·Î ¿¹¿ÜÄÉÀÌ½º)
+		}//ë¶€ì‚°êµ¬í¬ //í•­ë§Œë‹¨ë„ í¬í•¨(-1ë¡œ ì˜ˆì™¸ì¼€ì´ìŠ¤)
 		else if(cheaking==2||cheaking==8 ) {                         
 			to_string_temp = SearchTag_Type_Gyeongnam(to_string,cheaking);
-		}//°æ³²
+		}//ê²½ë‚¨
 		else if((cheaking>=3&&cheaking<=6)||cheaking==9) {           //Type3
 			to_string_temp = SearchTag_Type_Gyeongbuk(to_string,cheaking);
-		}//°æºÏ
+		}//ê²½ë¶
 		
 		to_string = to_string_temp.replaceAll("[^0-9]", "");
 		int today_Infected_person = Integer.parseInt(to_string);
@@ -76,16 +81,16 @@ public class Crwal_2 {
     	int temp = 0;
     	int var = 0;
     	int num  = 0;
-    	if (cheaking == 1)//ºÎ»ê
+    	if (cheaking == 1)//ë¶€ì‚°
     		num = 3;
-    	else if (cheaking == 10)//±¸Æ÷
+    	else if (cheaking == 10)//êµ¬í¬
     		num = 8;
-    	else if (cheaking == -1)//³²±¸(Ç×¸¸´Ü)
+    	else if (cheaking == -1)//ë‚¨êµ¬(í•­ë§Œë‹¨)
     		num = 7;
     	String to_string_temp = null;
 		for(int i = 0; i<to_string.length(); i++)
 		{
-			if(to_string.charAt(i) == '´©' &&to_string.charAt(i+1) == 'Àû')
+			if(to_string.charAt(i) == 'ëˆ„' &&to_string.charAt(i+1) == 'ì ')
 			{
 				temp = 1;
 			}
@@ -128,11 +133,11 @@ public class Crwal_2 {
 		return to_string_temp;
 	}
 
-	public static String SearchTag_Type_Ulsan(String to_string,int cheaking) {
+	/*public static String SearchTag_Type_Ulsan(String to_string,int cheaking) {
     	String to_string_temp = null;
     	for(int i = 0; i<to_string.length(); i++)
 		{
-			if(to_string.charAt(i) == '¸í')
+			if(to_string.charAt(i) == 'ëª…')
 			{
 				i = to_string.length();
 			}
@@ -143,12 +148,27 @@ public class Crwal_2 {
 		}
 		return to_string_temp;
     }
+    */
+	
+	public static int SearchTag_Type_Ulsan(String to_string, int cheaking) {
+		int count = 0;
+		for(int i = 3; i<to_string.length()-1; i++)
+		{
+			if(((to_string.charAt(i+1) == '<' ||to_string.charAt(i+1) == '(') &&to_string.charAt(i-3)  == '>' && to_string.charAt(i-2)  == 'ìš¸'&&to_string.charAt(i-1)  == 'ì£¼' && to_string.charAt(i)  == 'êµ°'
+							))
+			{
+				count++;
+				}
+			
+		}
+		return count;
+	}
     
-    public static String SearchTag_Type_Gyeongnam(String to_string,int cheaking) {
+	public static String SearchTag_Type_Gyeongnam(String to_string,int cheaking) {
     	String to_string_temp = null;
     	int var = 0;
-    	int var_chk=2; //Ã¢¿øÀÌ¸é 2
-    	if(cheaking==8)//ÁøÁÖÀÌ¸é 3
+    	int var_chk=2; //ì°½ì›ì´ë©´ 2
+    	if(cheaking==8)//ì§„ì£¼ì´ë©´ 3
     		var_chk=3;
 		for(int i = 0; i<to_string.length(); i++)
 		{
@@ -172,24 +192,24 @@ public class Crwal_2 {
     	int var = 0;
 		char ch1 = 0,ch2 = 0;
 		if(cheaking==3) {
-			ch1='Æ÷';
-			ch2='Ç×';
+			ch1='í¬';
+			ch2='í•­';
 		}
 		else if(cheaking==4) {
-			ch1='°æ';
-			ch2='ÁÖ';
+			ch1='ê²½';
+			ch2='ì£¼';
 		}
 		else if(cheaking==5) {
-			ch1='±è';
-			ch2='Ãµ';
+			ch1='ê¹€';
+			ch2='ì²œ';
 		}
 		else if(cheaking==6) {
-			ch1='°æ';
-			ch2='»ê';
+			ch1='ê²½';
+			ch2='ì‚°';
 		}
 		else if(cheaking==9) {
-			ch1='¿µ';
-			ch2='Ãµ';
+			ch1='ì˜';
+			ch2='ì²œ';
 		}
 		for(int i = 0; i<to_string.length(); i++)
 		{
@@ -215,17 +235,17 @@ public class Crwal_2 {
 	public static void Crwaling_2(int City[])
     {
 
-		//°ª Áı¾î³Ö±â
-		City[0] = crawling(URL_DongDaegu, contents_DongDaegu, 0);//µ¿´ë±¸
-		City[1] = crawling(URL_Busan, contents_Busan, 1);//ºÎ»ê,±¸Æ÷
-		City[2] = crawling(URL_Changwon, contents_Changwon,2);//Ã¢¿ø,ÁøÇØ,¸¶»ê
-		City[3] = crawling(URL_Pohang, contents_Pohang, 3);//Æ÷Ç×
-		City[4] = crawling(URL_Gyeongju, contents_Gyeongju, 4);//½Å°æÁÖ
-		City[5] = crawling(URL_Gimcheon, contents_Gimcheon, 5);//±èÃµ±¸¹Ì(±èÃµ)
-		City[6] = crawling(URL_Gyeongsan, contents_Gyeongsan, 6);//°æ»ê
-		City[7] = crawling(URL_Ulsan, contents_Ulsan, 7);//¿ï»ê
-		City[8] = crawling(URL_Jinju, contents_Jinju, 8);//ÁøÁÖ
-		City[9] = crawling(URL_Yeongcheon, contents_Yeongcheon, 9);   //¿µÃµ
-		City[10] = crawling(URL_Gupo, contents_Gupo, 10);   //¿µÃµ
+		//ê°’ ì§‘ì–´ë„£ê¸°
+		City[0] = crawling(URL_DongDaegu, contents_DongDaegu, 0);//ë™ëŒ€êµ¬
+		City[1] = crawling(URL_Busan, contents_Busan, 1);//ë¶€ì‚°,êµ¬í¬
+		City[2] = crawling(URL_Changwon, contents_Changwon,2);//ì°½ì›,ì§„í•´,ë§ˆì‚°
+		City[3] = crawling(URL_Pohang, contents_Pohang, 3);//í¬í•­
+		City[4] = crawling(URL_Gyeongju, contents_Gyeongju, 4);//ì‹ ê²½ì£¼
+		City[5] = crawling(URL_Gimcheon, contents_Gimcheon, 5);//ê¹€ì²œêµ¬ë¯¸(ê¹€ì²œ)
+		City[6] = crawling(URL_Gyeongsan, contents_Gyeongsan, 6);//ê²½ì‚°
+		City[7] = crawling(URL_Ulsan, contents_Ulsan, 7);//ìš¸ì‚°
+		City[8] = crawling(URL_Jinju, contents_Jinju, 8);//ì§„ì£¼
+		City[9] = crawling(URL_Yeongcheon, contents_Yeongcheon, 9);   //ì˜ì²œ
+		City[10] = crawling(URL_Gupo, contents_Gupo, 10);   //ì˜ì²œ
     }
 }
