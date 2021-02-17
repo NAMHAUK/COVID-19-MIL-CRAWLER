@@ -9,16 +9,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class File_Write {
-	public static String path_1 = "C:\\Users\\Åë½Åº´PC\\OneDrive\\¹ÙÅÁ È­¸é\\Å©·Ñ·¯\\PR\\1Fe.txt";
-	public static String path_2 = "C:\\Users\\Åë½Åº´PC\\OneDrive\\¹ÙÅÁ È­¸é\\Å©·Ñ·¯\\PR\\2Fe.txt";
-	public static String path_3 = "C:\\Users\\Åë½Åº´PC\\OneDrive\\¹ÙÅÁ È­¸é\\Å©·Ñ·¯\\PR\\3Fe.txt";//ÅØ½ºÆ® ÆÄÀÏ °æ·Î
-	public static String path_HO = "C:\\Users\\Åë½Åº´PC\\OneDrive\\¹ÙÅÁ È­¸é\\Å©·Ñ·¯\\PR\\hosong.txt";
-	public static String path_HA = "C:\\Users\\Åë½Åº´PC\\OneDrive\\¹ÙÅÁ È­¸é\\Å©·Ñ·¯\\PR\\hangman.txt";
-	public static String TMO1_index[] = {"¼­¿ï,¿ë»ê(¿ë»ê±¸)","±¤¸í","ÆòÅÃ","¼ö¿ø","¼ö¼­(°­³²±¸)","µ¿¼­¿ï(±¤Áø±¸)","ÃáÃµ","¿øÁÖ,¸¸Á¾(¿øÁÖ½Ã)","°­¸ª"};//9°³
-	public static String TMO2_index[] = {"µ¿´ë±¸(´ë±¸ µ¿±¸)","ºÎ»ê(ºÎ»ê µ¿±¸)","Ã¢¿øÁß¾Ó,ÁøÇØ,¸¶»ê(Ã¢¿ø)","Æ÷Ç×","½Å°æÁÖ","±èÃµ±¸¹Ì(±èÃµ)","°æ»ê","¿ï»ê","ÁøÁÖ", "¿µÃµ", "±¸Æ÷(ºÎ»ê ºÏ±¸)"};//11°³
-	public static String TMO3_index[]={"´ëÀü(´ëÀü µ¿±¸)","°è·æ","¼­´ëÀü(´ëÀü Áß±¸)","Á¶Ä¡¿ø(¼¼Á¾)","ºÎ°­(¼¼Á¾)","³í»ê","ÀÍ»ê","Àå¼º","±¤ÁÖ¼ÛÁ¤(±¤ÁÖ ±¤»ê±¸)","¸ñÆ÷","Ãµ¾È¾Æ»ê(¾Æ»ê)","ÀüÁÖ","Ãµ¾È","¿µµ¿","ÁõÆò","È«¼º","¿À¼Û(Ã»ÁÖ)"};//17°³
-	public static String HO_index[] = {"1Áß´ë(´ëÀü µ¿±¸)","2Áß´ë(Ã¢¿ø)","3Áß´ë(¼­¿ï ¿ë»ê±¸)"};//3°³
-	public static String HA_index[] = {"ºÎ»ê(ºÎ»ê ³²±¸)","ÁøÇØ(Ã¢¿ø)"};
+	public static String path_1 = "C:\\Users\\í†µì‹ ë³‘PC\\OneDrive\\ë°”íƒ• í™”ë©´\\í¬ë¡¤ëŸ¬\\PR\\1Fe.txt";
+	public static String path_2 = "C:\\Users\\í†µì‹ ë³‘PC\\OneDrive\\ë°”íƒ• í™”ë©´\\í¬ë¡¤ëŸ¬\\PR\\2Fe.txt";
+	public static String path_3 = "C:\\Users\\í†µì‹ ë³‘PC\\OneDrive\\ë°”íƒ• í™”ë©´\\í¬ë¡¤ëŸ¬\\PR\\3Fe.txt";//í…ìŠ¤íŠ¸ íŒŒì¼ ê²½ë¡œ
+	public static String path_HO = "C:\\Users\\í†µì‹ ë³‘PC\\OneDrive\\ë°”íƒ• í™”ë©´\\í¬ë¡¤ëŸ¬\\PR\\hosong.txt";
+	public static String path_HA = "C:\\Users\\í†µì‹ ë³‘PC\\OneDrive\\ë°”íƒ• í™”ë©´\\í¬ë¡¤ëŸ¬\\PR\\hangman.txt";
+	public static String TMO1_index[] = {"ì„œìš¸,ìš©ì‚°(ìš©ì‚°êµ¬)","ê´‘ëª…","í‰íƒ","ìˆ˜ì›","ìˆ˜ì„œ(ê°•ë‚¨êµ¬)","ë™ì„œìš¸(ê´‘ì§„êµ¬)","ì¶˜ì²œ","ì›ì£¼,ë§Œì¢…(ì›ì£¼ì‹œ)","ê°•ë¦‰"};//9ê°œ
+	public static String TMO2_index[] = {"ë™ëŒ€êµ¬(ëŒ€êµ¬ ë™êµ¬)","ë¶€ì‚°(ë¶€ì‚° ë™êµ¬)","ì°½ì›ì¤‘ì•™,ì§„í•´,ë§ˆì‚°(ì°½ì›)","í¬í•­","ì‹ ê²½ì£¼","ê¹€ì²œêµ¬ë¯¸(ê¹€ì²œ)","ê²½ì‚°","ìš¸ì‚°(ìš¸ì‚° ìš¸ì£¼êµ°)","ì§„ì£¼", "ì˜ì²œ", "êµ¬í¬(ë¶€ì‚° ë¶êµ¬)"};//11ê°œ
+	public static String TMO3_index[]={"ëŒ€ì „(ëŒ€ì „ ë™êµ¬)","ê³„ë£¡","ì„œëŒ€ì „(ëŒ€ì „ ì¤‘êµ¬)","ì¡°ì¹˜ì›(ì„¸ì¢…)","ë¶€ê°•(ì„¸ì¢…)","ë…¼ì‚°","ìµì‚°","ì¥ì„±","ê´‘ì£¼ì†¡ì •(ê´‘ì£¼ ê´‘ì‚°êµ¬)","ëª©í¬","ì²œì•ˆì•„ì‚°(ì•„ì‚°)","ì „ì£¼","ì²œì•ˆ","ì˜ë™","ì¦í‰","í™ì„±","ì˜¤ì†¡(ì²­ì£¼)"};//17ê°œ
+	public static String HO_index[] = {"1ì¤‘ëŒ€(ëŒ€ì „ ë™êµ¬)","2ì¤‘ëŒ€(ì°½ì›)","3ì¤‘ëŒ€(ì„œìš¸ ìš©ì‚°êµ¬)"};//3ê°œ
+	public static String HA_index[] = {"ë¶€ì‚°(ë¶€ì‚° ë‚¨êµ¬)","ì§„í•´(ì°½ì›)"};
 	
 	public static String Choose_path(String Which_Fe) {
 		if(Which_Fe == "1") {
@@ -70,30 +70,30 @@ public class File_Write {
 
 			String path = null;
 			String TMO_index[] = new String[How_Many_TMO];
-			//Ã¶µµ´ë¿¡ µû¶ó path ¹× TMO index ÁöÁ¤
+			//ì² ë„ëŒ€ì— ë”°ë¼ path ë° TMO index ì§€ì •
 			
 			path = Choose_path(Which_Fe);
 			TMO_index = Choose_index(Which_Fe);
 			
 
 			String TDay,LDay;
-			int TMO_data[][]=new int[How_Many_TMO][3];//0=¿À´Ã È®ÁøÀÚ ¼ö, 1=¾îÁ¦ È®ÁøÀÚ ¼ö, 2=ÄÚ·Î³ª ¹Ì¹ß»ı ÀÏ¼ö
+			int TMO_data[][]=new int[How_Many_TMO][3];//0=ì˜¤ëŠ˜ í™•ì§„ì ìˆ˜, 1=ì–´ì œ í™•ì§„ì ìˆ˜, 2=ì½”ë¡œë‚˜ ë¯¸ë°œìƒ ì¼ìˆ˜
 			int int_TDay,int_LDay;
 	
-			//¿À´Ã³¯Â¥,°¡ÀåÃÖ±Ù °»½Å³¯Â¥ ¾ò±â
+			//ì˜¤ëŠ˜ë‚ ì§œ,ê°€ì¥ìµœê·¼ ê°±ì‹ ë‚ ì§œ ì–»ê¸°
 			SimpleDateFormat format = new SimpleDateFormat ("yyMMdd");//ex)201129
 			Date time = new Date();
 			TDay=format.format(time);
 			
 			
-			//txtÆÄÀÏ¿¡ ÀÖ´Â Á¤º¸ LDay, TMO_data·Î ÀúÀå
+			//txtíŒŒì¼ì— ìˆëŠ” ì •ë³´ LDay, TMO_dataë¡œ ì €ì¥
 			File file = new File(path);
 
 			FileReader filereader = new FileReader(file);
 			BufferedReader bufReader = new BufferedReader(filereader);
             String line = "";
             int linenum=0;
-            LDay=bufReader.readLine();//LDay=¸¶Áö¸·°»½Å³¯Â¥
+            LDay=bufReader.readLine();//LDay=ë§ˆì§€ë§‰ê°±ì‹ ë‚ ì§œ
             while((line = bufReader.readLine()) != null){
             	String[] arr=line.split(" ");
             	for(int i=0;i<3;i++) {
@@ -102,30 +102,30 @@ public class File_Write {
             	linenum++;
             }
             
-			//ÀúÀåµÈ TMO_data¸¦ »ç¿ëÇØ¼­ Á¤º¸ °»½Å
+			//ì €ì¥ëœ TMO_dataë¥¼ ì‚¬ìš©í•´ì„œ ì •ë³´ ê°±ì‹ 
 			int_TDay=Integer.parseInt(TDay,10);
 			int_LDay=Integer.parseInt(LDay,10);
 			
-			if(int_TDay==int_LDay) {//ÀÌ¹Ì ¿À´Ã °»½ÅÀ» ÇÑ »óÅÂ-> ¿À´Ã È®ÁøÀÚ ¼ö¸¸ °»½ÅÇØÁÖ¸é µÊ
+			if(int_TDay==int_LDay) {//ì´ë¯¸ ì˜¤ëŠ˜ ê°±ì‹ ì„ í•œ ìƒíƒœ-> ì˜¤ëŠ˜ í™•ì§„ì ìˆ˜ë§Œ ê°±ì‹ í•´ì£¼ë©´ ë¨
 				for(int i=0;i<How_Many_TMO;i++) {
-					TMO_data[i][0]=Now_data[i];//¿À´Ã È®ÁøÀÚ ¼ö °»½Å
+					TMO_data[i][0]=Now_data[i];//ì˜¤ëŠ˜ í™•ì§„ì ìˆ˜ ê°±ì‹ 
 					
-					//¿À´Ã È®ÁøÀÚ°¡ Áõ°¡ÇÑ °æ¿ì-> ÄÚ·Î³ª ¹Ì¹ß»ı ÀÏ¼ö 0ÀÏ·Î ÃÊ±âÈ­
+					//ì˜¤ëŠ˜ í™•ì§„ìê°€ ì¦ê°€í•œ ê²½ìš°-> ì½”ë¡œë‚˜ ë¯¸ë°œìƒ ì¼ìˆ˜ 0ì¼ë¡œ ì´ˆê¸°í™”
 					if(TMO_data[i][0]-TMO_data[i][1]>0) {
 						TMO_data[i][2]=0;
 					}
 				}
 			}
-			else {//¿À´Ã »ı½ÅÀ» ÇÑ¹øµµ ¾ÈÇÑ »óÅÂ-> ¿À´Ã È®ÁøÀÚ ¼ö¸¦ ¾îÁ¦ È®ÁøÀÚ¼ö·Î º¯°æ,¿À´Ã È®ÁøÀÚ¼ö °»½Å
+			else {//ì˜¤ëŠ˜ ìƒì‹ ì„ í•œë²ˆë„ ì•ˆí•œ ìƒíƒœ-> ì˜¤ëŠ˜ í™•ì§„ì ìˆ˜ë¥¼ ì–´ì œ í™•ì§„ììˆ˜ë¡œ ë³€ê²½,ì˜¤ëŠ˜ í™•ì§„ììˆ˜ ê°±ì‹ 
 				for(int i=0;i<How_Many_TMO;i++) {
 					TMO_data[i][1]=TMO_data[i][0];
 					TMO_data[i][0]=Now_data[i];
 					
-					//¿À´Ã È®ÁøÀÚ°¡ Áõ°¡ÇÑ °æ¿ì-> ÄÚ·Î³ª ¹Ì¹ß»ı ÀÏ¼ö 0ÀÏ·Î ÃÊ±âÈ­
+					//ì˜¤ëŠ˜ í™•ì§„ìê°€ ì¦ê°€í•œ ê²½ìš°-> ì½”ë¡œë‚˜ ë¯¸ë°œìƒ ì¼ìˆ˜ 0ì¼ë¡œ ì´ˆê¸°í™”
 					if(TMO_data[i][0]-TMO_data[i][1]>0) {
 						TMO_data[i][2]=0;
 					}
-					//¿À´Ã È®ÁøÀÚ¼ö°¡ Áõ°¡ÇÏÁö ¾ÊÀº °æ¿ì-> ÄÚ·Î³ª ¹Ì¹ß»ı ÀÏ¼ö +1
+					//ì˜¤ëŠ˜ í™•ì§„ììˆ˜ê°€ ì¦ê°€í•˜ì§€ ì•Šì€ ê²½ìš°-> ì½”ë¡œë‚˜ ë¯¸ë°œìƒ ì¼ìˆ˜ +1
 					else {
 						TMO_data[i][2]++;
 					}
@@ -133,12 +133,12 @@ public class File_Write {
 			}
 			
 			
-			//*******TMO_data¸¦ »ç¿ëÇØ¼­ ¸Ş¸ğÀå¿¡ ´Ù½Ã ÇÑÁÙ¾¿ ÀÛ¼ºÇØ¼­ µ¤¾î¾º¿ö ÀúÀå
+			//*******TMO_dataë¥¼ ì‚¬ìš©í•´ì„œ ë©”ëª¨ì¥ì— ë‹¤ì‹œ í•œì¤„ì”© ì‘ì„±í•´ì„œ ë®ì–´ì”Œì›Œ ì €ì¥
 			
 			BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
             String tmpString="";
             if(file.isFile() && file.canWrite()){
-            	bufferedWriter.write(TDay);//Ã¹ÁÙ: °»½Å³¯Â¥
+            	bufferedWriter.write(TDay);//ì²«ì¤„: ê°±ì‹ ë‚ ì§œ
             	bufferedWriter.newLine();
             	for(int i=0;i<How_Many_TMO;i++) {
             		tmpString=TMO_data[i][0]+" "+TMO_data[i][1]+" "+TMO_data[i][2];
