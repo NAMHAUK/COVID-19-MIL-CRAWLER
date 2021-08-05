@@ -16,45 +16,24 @@ public class Mail {
 
 	// Replace sender@example.com with your "From" address.
     // This address must be verified.
-    static final String FROM = "jet981217@naver.com";
+    static final String FROM = "";//Mail Address
     static final String FROMNAME = "국수사 크롤러봇";
 	
     // Replace recipient@example.com with a "To" address. If your account 
     // is still in the sandbox, this address must be verified.
-    final static String []TO_1 = new String[] {"ljoljo3980@naver.com", "namhoyog@naver.com",//*/ 
-    		"jet981217@naver.com"};
-    final static String []TO_2 = new String[] { "kaay51022@naver.com","namhoyog@naver.com", //*/
-    		"jet981217@naver.com"};
-    final static String []TO_3 = new String[] {"tkth2575@naver.com", "jsj4213@naver.com", "yjr0299@naver.com", "windkwon@naver.com",
-
-"rkggksqlc123@naver.com",
-
-"dbtp2@daum.net",
-
-"ssibalbabe@naver.com",
-
-"hchclgns1116@naver.com",
-
-"tn4207@naver.com",
-
-"ptsas98@naver.com",
-
-"magma1251@naver.com",
-
-"jmg1879@naver.com", "namhoyog@naver.com", //*/
-    		"jet981217@naver.com"};
+    final static String []TO_1 = new String[] {};//Mail Address
+    final static String []TO_2 = new String[] {};//Mail Address
+    final static String []TO_3 = new String[] {};//Mail Address
     
-    final static String []TO_HO = new String[] {"namhoyog@naver.com",//*/ 
-"jet981217@naver.com"};//호송
+    final static String []TO_HO = new String[] {};//Mail Address
 
-    final static String []TO_HA = new String[] {"namhoyog@naver.com",//*/ 
-    "jet981217@naver.com"};//항만
+    final static String []TO_HA = new String[] {};//
     
     //보내는 메일 ID
-    static final String SMTP_USERNAME = "jet981217@naver.com";
+    static final String SMTP_USERNAME = "";//Mail Address
     
     //보내는 메일 비번
-    static final String SMTP_PASSWORD = "dlftmdck@98";
+    static final String SMTP_PASSWORD = "";//Mail Password
     
     // The name of the Configuration Set to use for this message.
     // If you comment out or remove this variable, you will also need to
